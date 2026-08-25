@@ -1,0 +1,11 @@
+{
+  "name": "chantierpro",
+  "version": "3.1.0",
+  "description": "ChantierPro — Suivi de chantiers BTP (offline-first, cloud en option)",
+  "private": true,
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "postinstall": "cd server && npm install",
+    "start": "node server/server.js"
+  }
+}

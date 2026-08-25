@@ -1,0 +1,14 @@
+{
+  "name": "ChantierPro — Suivi de chantiers BTP",
+  "short_name": "ChantierPro",
+  "description": "Suivi de chantiers BTP : journal, pointage, planning, dépenses, matériaux, réserves. Hors-ligne + cloud.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f2f4f7",
+  "theme_color": "#0e1526",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
