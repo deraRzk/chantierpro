@@ -293,4 +293,4 @@ app.use((req, res, next) => {
 app.use(express.static(ROOT, { index: 'index.html' }));
 app.use((req, res) => res.status(404).send('404 — ChantierPro'));
 
-app.listen(PORT, '0.0.0.0', () => console.log(`ChantierPro Cloud prêt → http://0.0.0.0:${PORT}`));
+dbm.ready().then(() => app.listen(PORT, '0.0.0.0', () => console.log(`ChantierPro Cloud prêt → http://0.0.0.0:${PORT}`)));
