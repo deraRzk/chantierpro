@@ -28,19 +28,15 @@ Pour la future version commerciale payante : disque persistant Render (~7 $/mois
 1. Une fois connecté, clique sur **« + »** (en haut à droite) → **« New repository »**
 2. Nom du dépôt : **`chantierpro`** → laisse **Public** → clique **« Create repository »**
 3. Sur la page qui s'ouvre, clique sur le lien **« uploading an existing file »**
-4. **Glisse-dépose (ou sélectionne) ces 14 fichiers** (ils sont dans le ZIP `ChantierPro-v3-cloud.zip` — décompresse-le d'abord) :
+4. **Glisse-dépose (ou sélectionne) ces 15 fichiers** depuis le ZIP **`ChantierPro-deploy.zip`** (décompresse-le d'abord — appuie dessus → « Extraire ») :
 
-   À la racine :
    ```
-   index.html · app.js · cloud.js · styles.css
-   manifest.webmanifest · sw.js · icon.svg
-   package.json · render.yaml · .gitignore · README.md
+   index.html · app.js · cloud.js · styles.css · manifest.webmanifest
+   sw.js · icon.svg · package.json · render.yaml · .gitignore
+   README.md · DEPLOIEMENT.md · server.js · db.js · parser.js
    ```
-   Dans un dossier **`server/`** (crée-le via « Add file → Create new file → nommez `server/server.js` » OU glisse le dossier complet) :
-   ```
-   server/server.js · server/db.js · server/parser.js · server/package.json
-   ```
-   ⚠️ **Ne mets PAS** les dossiers `node_modules/`, `server/data/` ni les ZIP.
+   ✨ **Tout est à plat, aucun dossier** — sélectionne les 15 fichiers d'un coup.
+   ⚠️ **Ne mets PAS** `node_modules/`, `data/` ni les ZIP.
 
 5. En bas, clique **« Commit changes »**
 

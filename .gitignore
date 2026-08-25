@@ -1,6 +1,5 @@
 node_modules/
-server/node_modules/
-server/data/
+data/
 *.zip
-.DS_Store
 test-ui.js
+.DS_Store

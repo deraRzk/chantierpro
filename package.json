@@ -3,9 +3,16 @@
   "version": "3.1.0",
   "description": "ChantierPro — Suivi de chantiers BTP (offline-first, cloud en option)",
   "private": true,
+  "main": "server.js",
   "engines": { "node": ">=18" },
   "scripts": {
-    "postinstall": "cd server && npm install",
-    "start": "node server/server.js"
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.2.0",
+    "pdf-parse": "^2.4.5"
   }
 }

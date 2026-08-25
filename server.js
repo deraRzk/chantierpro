@@ -17,7 +17,7 @@ const { parsePlanningText } = require('./parser');
 dbm.init();
 const app = express();
 const PORT = process.env.PORT || 8000;
-const ROOT = path.join(__dirname, '..');
+const ROOT = __dirname;
 
 app.use(express.json({ limit: '150mb' }));
 
@@ -286,7 +286,8 @@ app.get('/share/:token', (req, res) => {
 
 /* ===================== STATIQUE (après l'API) ===================== */
 app.use((req, res, next) => {
-  if (req.path.startsWith('/server')) return res.status(404).end();
+  const p = req.path;
+  if (p.startsWith('/data') || p.startsWith('/node_modules') || p === '/server.js' || p === '/db.js' || p === '/parser.js' || p === '/package.json' || p === '/package-lock.json' || p === '/render.yaml' || p === '/.gitignore' || p === '/test-ui.js') return res.status(404).end();
   next();
 });
 app.use(express.static(ROOT, { index: 'index.html' }));
