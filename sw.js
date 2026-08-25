@@ -1,10 +1,15 @@
 /* ChantierPro — Service Worker (mode hors-ligne après installation) */
 'use strict';
-const CACHE = 'chantierpro-v3.1-fix3';
-const SHELL = ['/', '/index.html', '/styles.css?v=313', '/app.js?v=313', '/cloud.js?v=313', '/manifest.webmanifest', '/icon.svg', '/ChantierPro.html'];
+const CACHE = 'chantierpro-v3.1-fix4';
+const SHELL = ['/', '/index.html', '/styles.css?v=313', '/app.js?v=313', '/cloud.js?v=313', '/manifest.webmanifest', '/icon.svg'];
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  /* Résilient : chaque fichier mis en cache séparément — un fichier manquant (404) ne casse plus l'installation */
+  e.waitUntil(
+    caches.open(CACHE)
+      .then(c => Promise.all(SHELL.map(u => c.add(u).catch(() => {}))))
+      .then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener('activate', e => {
